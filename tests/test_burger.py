@@ -8,25 +8,6 @@ from praktikum.ingredient_types import INGREDIENT_TYPE_SAUCE, INGREDIENT_TYPE_FI
 
 class TestBurger:
     
-    @pytest.fixture
-    def burger(self):
-        return Burger()
-    
-    @pytest.fixture
-    def mock_bun(self):
-        mock_bun = Mock(spec=Bun)
-        mock_bun.get_name.return_value = "test bun"
-        mock_bun.get_price.return_value = 100
-        return mock_bun
-    
-    @pytest.fixture
-    def mock_ingredient(self):
-        mock_ingredient = Mock(spec=Ingredient)
-        mock_ingredient.get_name.return_value = "test ingredient"
-        mock_ingredient.get_price.return_value = 50
-        mock_ingredient.get_type.return_value = INGREDIENT_TYPE_SAUCE
-        return mock_ingredient
-    
     def test_set_buns(self, burger, mock_bun):
         burger.set_buns(mock_bun)
         assert burger.bun == mock_bun

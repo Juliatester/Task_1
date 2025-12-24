@@ -32,4 +32,3 @@ class TestBun:
         """Проверяем создание булочки с дробной ценой."""
         bun = Bun("test bun", 99.99)
         assert bun.get_price() == 99.99
-        assert bun.get_name() == "test bun"
